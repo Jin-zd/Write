@@ -1,0 +1,288 @@
+\documentclass{article}
+\usepackage[normalem]{ulem}
+\usepackage{xeCJK}
+\usepackage{indentfirst}
+\usepackage{setspace}
+\usepackage{marginnote}
+\usepackage{hyperref}
+\usepackage{fontspec}
+\usepackage{amsmath}
+
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue, % 将链接颜色更改为蓝色
+    urlcolor=blue,  % 将URL的颜色也更改为蓝色
+}
+\title{Latex Notes}
+\author{Jin}
+\date{\today}
+\setcounter{tocdepth}{2}
+\setlength{\parindent}{2em} %段落首行缩进距离
+\addtolength{\parskip}{3pt} %段落间距
+\linespread{1.2} %设置行距
+
+\setCJKmainfont{SimSun}
+\setCJKmonofont{Microsoft YaHei}
+\setmainfont[Mapping=tex-text]{Times New Roman}
+\setsansfont[Mapping=tex-text]{Tahoma}
+\setmonofont{Courier New}
+
+\renewcommand{\labelitemi}{-} % 改变列表符号及编号形式
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\begin{document}
+\maketitle
+\tableofcontents % 生成目录
+
+This is document.
+\section{Section 1}
+\Large{This} \small{is} section 1.
+
+\subsection{Subsection 1.1}
+This is subsection 1.1. \\
+\# \{ \} \~ \textbackslash \\
+\LaTeX \\
+\v{A} \={A} \~{A} \textcircled{A}
+
+\subsubsection{Subsubsection 1.1.1}
+\textit{This is subsubsection 1.1.1.}  
+\begin{spacing}{1.3}
+    \emph{This is emphesis.} \\
+    \uline{underline} \\
+    \uwave{waveline} \\
+    \sout{strike-out}
+\end{spacing}
+
+
+
+
+\newpage
+\section{Section 2}
+
+\paragraph{Paragraph}
+
+\begin{flushleft}
+    This is paragraph.
+\end{flushleft}
+\begin{quote}
+引文两端\\都缩进。
+\end{quote}
+
+\begin{quotation}
+引文两端缩进，首\\行增加缩进。
+\end{quotation}
+
+\begin{verse}
+引文两端缩进，第二行\\起增加缩进。
+\end{verse}
+
+\verb|command| 行 间 命 令
+\begin{verbatim}
+printf("Hello   , world!");
+\end{verbatim}
+% 可以标出空格
+\begin{verbatim*} 
+printf("Hello   , world!"); 
+\end{verbatim*}
+
+\begin{center}
+    This is the center of the page.
+\end{center}
+
+正文\footnote{脚注}
+
+\marginnote{正常边注}
+\reversemarginpar
+\marginnote{反向边注}
+\normalmarginpar
+
+\subparagraph{Subparagraph} 
+This is subparagraph.
+
+\begin{itemize}
+    \item C++
+    \item Java
+    \item HTML
+\end{itemize}
+
+\begin{enumerate}
+    \item C++
+    \item Java
+    \item HTML
+\end{enumerate}
+
+一个标签\label{marker}
+
+\begin{description}
+    \item[C++] 编 程 语 言
+    \item[Java] 编 程 语 言
+    \item[HTML] 标 记 语 言
+\end{description}
+
+\newpage
+\mbox{010 6278 5001}
+\fbox{010 6278 5001}
+
+%语法：[宽度][对齐方式]{内容}
+\makebox[100pt][c]{仪仗队}
+
+\framebox[100pt][s]{仪仗队}
+
+
+% 语法：[外部对齐][高度][内部对齐]{宽度}{内容}
+\fbox{
+ \parbox[c][36pt][t]{140pt}{
+锦瑟无端五十弦，一弦一柱思华年。庄生晓梦迷蝴蝶，望帝春心托杜鹃。
+ }
+}
+
+\hfill
+
+\fbox{
+ \begin{minipage}[c][36pt][b]{140pt}
+沧海月明珠有泪，蓝田日暖玉生烟。此情可待成追忆，只是当时已惘然。
+\end{minipage}
+}
+
+第\pageref{marker}页\ref{marker}节
+
+\begin{equation}
+    E=mc^2 \label{eq:einstein}
+\end{equation}
+
+As derived in Equation~\ref{eq:einstein}
+
+Einstein's $E=mc^2$
+\[ E=mc^2 \]
+\[ \boxed{E=mc^2} \]
+\begin{equation}
+E=mc^2
+\end{equation}
+
+\[
+x_{ij}^2\quad \sqrt{x}\quad \sqrt[3]{x} 
+\]
+
+$ \frac{1}{2} \dfrac{1}{2} $
+\[ \frac{1}{2}
+\tfrac{1}{2} \]
+
+
+\[ \pm\; \times\; \div\; \cdot\; \cap\; \cup\;
+\geq\; \leq\; \neq\; \approx\; \equiv \]
+
+
+\newpage
+$ \sum_{i=1}^n i\quad \prod_{i=1}^n\quad
+\lim_{x\to0}x^2\quad \int_a^b x^2 dx $\\
+$ \sum\limits_{i=1}^n i\quad \prod\limits_{i=1}^n\quad
+\lim\limits_{x\to0}x^2\quad \int\limits_a^b x^2 dx $
+\[ \sum_{i=1}^n i\quad \prod_{i=1}^n\quad
+\lim_{x\to0}x^2\quad \int_a^b x^2 dx \]
+\[ \sum\nolimits_{i=1}^n i\quad
+\prod\nolimits_{i=1}^n\quad
+\lim\nolimits_{x\to0}x^2\quad
+10 \int\nolimits_a^b x^2 dx \]
+
+
+\[ \int\int\quad \int\int\int\quad
+\int\int\int\int\quad \int\dots\int \]
+\[ \iint\quad \iiint\quad \iiiint\quad \idotsint \]
+
+\[ \xleftarrow{x+y+z}\quad
+\xrightarrow[x<y]{a*b*c} \]
+
+\[
+\bar{x} \quad \hat{x} \quad \vec{x} \\
+\overline{xxx} \quad \underline{xxx} \quad \overbrace{xxx} 
+\quad \underbrace{xxx} \quad \overrightarrow{xxx}
+\]
+
+\[ \Bigg(\bigg(\Big(\big((x)\big)\Big)\bigg)\Bigg)\quad
+\Bigg[\bigg[\Big[\big[[x]\big]\Big]\bigg]\Bigg]\quad
+\Bigg\{\bigg\{\Big\{\big\{\{x\}\big\}\Big\}\bigg\}\Bigg\}
+\]\[
+\Bigg\langle\bigg\langle\Big\langle\big\langle\langle x
+\rangle\big\rangle\Big\rangle\bigg\rangle\Bigg\rangle\quad
+\Bigg\lvert\bigg\lvert\Big\lvert\big\lvert\lvert x
+\rvert\big\rvert\Big\rvert\bigg\rvert\Bigg\rvert\quad
+\Bigg\lVert\bigg\lVert\Big\lVert\big\lVert\lVert x
+\rVert\big\rVert\Big\rVert\bigg\rVert\Bigg\rVert \]
+
+\[ x_1,x_2,\dots,x_n\quad 1,2,\cdots,n\quad
+\vdots\quad \ddots \]
+
+a\, a\: a\; a\quad a\qquad a\! a
+
+\[ \begin{pmatrix} a&b\\c&d \end{pmatrix} \quad
+2 \begin{bmatrix} a&b\\c&d \end{bmatrix} \quad
+\begin{Bmatrix} a&b\\c&d \end{Bmatrix} \quad
+4 \begin{vmatrix} a&b\\c&d \end{vmatrix} \quad
+\begin{Vmatrix} a&b\\c&d \end{Vmatrix} \]
+
+Marry has a little matrix $ ( \begin{smallmatrix}
+    a&b\\c&d \end{smallmatrix} ) $.
+
+\begin{multline}
+    x = a+b+c+ \\
+    d+e+f+g
+\end{multline}
+
+\[ \begin{split}
+    x = &a+b+c+ \\
+    &d+e+f+g
+\end{split} \]
+
+\begin{gather}
+    a = b+c+d \\
+    x = y+z
+\end{gather}
+
+\begin{align}
+    a &= b+c+d \\
+    x &= y+z
+\end{align}
+
+\[ 
+y=
+\begin{cases}
+    -x,\quad x\leq 0 \\ 
+    x,\quad x>0
+\end{cases} 
+\]
+
+
+设有 $m$ 个评价样本和 $n$ 个准则。构建 $m \times n$ 的决策矩阵 $X$，其中 $x_{ij}$​ 表示第 $i$ 个备选方案在第 $j$ 个准则下的值。\\
+对于每个准则 $j$，确定正负理想解 $A^{+}_{j}$ 和 $A^{-}_{j}$: \\
+若准则是极大化的，则
+\[
+\begin{aligned}
+& A^{+}_{j} = \max{(x_{ij})} \; \forall j, \\
+& A^{-}_{j} = \min{(x_{ij})} \; \forall j,
+\end{aligned}
+\]
+若准则是极小化的，则
+\[
+\begin{aligned}
+& A^{+}_{j} = \min{(x_{ij})} \; \forall j, \\
+& A^{-}_{j} = \max{(x_{ij})} \; \forall j,
+\end{aligned}
+\]
+对每个样本 $i$，计算其到正负理想解的距离:
+\[
+\begin{aligned}
+& S_i = \sum\limits_{j = 0}^{n} w_{j} \frac{|x_{ij} - A^{-}_{j}|}{|A^{+}_{j} - A^{-}_{j}|}, \\
+& R_i = \max{(w_{j} \frac{|x_{ij} - A^{-}_{j}|}{|A^{+}_{j} - A^{-}_{j}|})},
+\end{aligned}
+\]
+其中，$w_j$ 是准则 $j$ 的权重。\\
+计算 $VIKOR$ 评价指标 $V_i$：
+\[
+V_i = Q \frac{S_i - \min{(S_i)}}{\max{(S_i)} - \min{(S_i)}} + (1 - Q) \frac{R_i - \min{(R_i)}}{\max{(R_i)} - \min{(R_i)}}
+\]
+其中 $Q \in [0, 1]$ 为冲突平衡参数。\\
+根据 $VIKOR$ 指标 $V_i$ 对备选方案进行排序，选择最优方案，数值越小的方案越优。
+
+
+\end{document}
